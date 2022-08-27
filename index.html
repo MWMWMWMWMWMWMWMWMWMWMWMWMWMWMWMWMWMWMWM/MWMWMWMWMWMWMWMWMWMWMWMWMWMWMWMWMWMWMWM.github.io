@@ -97,22 +97,32 @@
   </style>
 <script>
 window.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
+    console.log("Right click theoretically cancelled!");
+    event.preventDefault();
+    return false;
 })
 
 window.addEventListener("keydown", (event) => {
-  if(event.key == "F12") {
-    event.preventDefault();
-  }
-  if(event.ctrlKey && event.shiftKey && event.key == "j") {
-    event.preventDefault();
-  }
-  if(event.ctrlKey && event.shiftKey && event.key == "i") {
-    event.preventDefault();
-  }
-  if(event.ctrlKey && event.key == "u") {
-    event.preventDefault();
-  }
+    if(event.keyCode == 123) {
+        console.log("F12 theoretically cancelled!");
+        event.preventDefault();
+        return false;
+    }
+    if(event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+        console.log("CTRL+SHIFT+J theoretically cancelled!");
+        event.preventDefault();
+        return false;
+    }
+    if(event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+        console.log("CTRL+SHIFT+I theoretically cancelled!");
+        event.preventDefault();
+        return false;
+    }
+    if(event.ctrlKey && event.key == "u") {
+        console.log("CTRL+U theoretically cancelled!");
+        event.preventDefault();
+        return false;
+    }
 })
 </script>
   <script>
